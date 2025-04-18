@@ -3,10 +3,10 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import { Routes, Route } from "react-router";
 import AddProducts from "./pages/AddProducts";
-import ListProducts from "./pages/listProducts";
 import Login from "./components/Login";
 import { ToastContainer, toast } from "react-toastify";
 import OrderProducts from "./pages/OrderProducts";
+import ListProducts from "./pages/ListProducts";
 
 export const backendURL = import.meta.env.VITE_BACKEND_URL;
 export const currency = "₹"
