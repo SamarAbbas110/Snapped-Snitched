@@ -13,7 +13,7 @@ const Newsletter = () => {
       <p className="mt-2 text-gray-500">
         Stay updated with our latest collections, special offers, and more.
       </p>
-      <form className="w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 pl-3 border">
+      <form  className="w-full sm:w-1/2 flex items-center gap-3 mx-auto my-6 pl-3 border">
         <input className="w-full sm:flex-1 outline-none" type="email" placeholder="Enter your Email" required/>
         <button onSubmit={SubmitHandler} type="submit" className="bg-black text-white text-base px-10 py-4">SUBSCRIBE</button>
       </form>

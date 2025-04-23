@@ -3,7 +3,7 @@ import { shopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductList from "./ProductList";
 
-const RelatedProducts = ({ category, subCategory }) => {
+const RelatedProducts = ({ category, subCategory , currentProductId }) => {
   const [related, setRelated] = useState([]);
   // Fetch related products based on the provided category and subcategory
 
@@ -13,11 +13,14 @@ const RelatedProducts = ({ category, subCategory }) => {
     if (products.length > 0 && category && subCategory) {
       let productCopy = products.filter(
         (product) =>
-          product.category === category && product.subCategory === subCategory
+          product._id !== currentProductId &&
+          product.category === category &&
+          product.subCategory === subCategory
       );
       setRelated(productCopy.slice(0, 5));
     }
-  }, [products]);
+  }, [products, category, subCategory]);
+  
 
   return (
     <div className="my-24">

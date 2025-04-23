@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { shopContext } from "../context/ShopContext";
 import Title from "./Title";
 import ProductList from "./ProductList";
+import { Link } from "react-router";
 
 const LatestCollections = () => {
   const { products } = useContext(shopContext);
@@ -35,6 +36,10 @@ const LatestCollections = () => {
           />
         ))}
       </div>
+      <div className="mt-4 text-center">
+      <Link to="/collections"><button  className="bg-black text-white px-4 py-4 cursor-pointer">Explore All Collections</button></Link>
+      </div>
+      
     </div>
   );
 };

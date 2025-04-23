@@ -3,6 +3,7 @@ import { shopContext } from "../context/ShopContext";
 import Title from "../components/Title";
 import { assets } from "../assets/frontend_assets/assets";
 import TotalCartAmt from "../components/TotalCartAmt";
+import { toast } from "react-toastify";
 
 const Cart = () => {
   const { products, currency, cartItem, updateQuantity, navigate } =
@@ -53,6 +54,7 @@ const Cart = () => {
                 />
                 <div className="">
                   <p className="text-xs sm:text-lg poppins-bold">
+                  {/* Append the selected product size (e.g., S, M, L) next to the product name in the cart */}
                     {cartProducts.name} - {item.size}
                   </p>
                   <div className="flex items-center gap-5 mt-2">
@@ -81,7 +83,10 @@ const Cart = () => {
               />
               {/* (item._id , item.size , 0) - Means if the Quantity is 0 it will remove from the Cart */}
               <img
-                onClick={() => updateQuantity(item._id, item.size, 0)}
+              onClick={() => {
+                updateQuantity(item._id, item.size, 0);
+                toast.success("Product has been deleted successfully");
+              }}
                 className="w-4 mr-4 sm:w-5 cursor-pointer"
                 src={assets.bin_icon}
                 alt=""

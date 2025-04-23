@@ -183,7 +183,7 @@ const AddProducts = ({ token }) => {
           >
             <option value="Topwear">Topwear</option>
             <option value="Bottomwear">Bottomwear</option>
-            <option value="Winter">Winter</option>
+            <option value="Winterwear">Winterwear</option>
           </select>
         </div>
 

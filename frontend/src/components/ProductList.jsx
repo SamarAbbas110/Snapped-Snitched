@@ -10,8 +10,9 @@ const ProductList = ({id , name , image , price}) => {
             <img className='hover:scale-110 transition ease-in-out' src={image[0]} alt="" />
         </div>
         <p className='pt-3 pb-1 text-sm poppins-regular'>{name}</p>
-        <p className='text-sm poppins-bold'>{currency}{price}</p>
+        <p className='text-sm poppins-bold text-red-500'>{currency}{price}</p>
     </Link>
+
   )
 }
 

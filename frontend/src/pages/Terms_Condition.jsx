@@ -2,7 +2,7 @@ import React from 'react'
 
 const Terms_Condition = () => {
   return (
-    <div>
+    <div className=''>
         The domain name www.Comicsense.Store (“Website”) is a site operated by Comicsense, a Proprietorship firm incorporated under Income Tax and GST laws of India with our registered office at B-125, Sethi Colony, Satalite Hospital, Jawahar Nagar,Jaipur,Rajasthan,302004 (“Firm/Comicsense”).
 
 This website is operated by Comicsense.Store. Throughout the site, the terms “we”, “us” and “our” refer to Comicsense.Store. Comicsense.Store offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here.

@@ -4,6 +4,7 @@ import { shopContext } from "../context/ShopContext";
 import { assets } from "../assets/frontend_assets/assets";
 import { Link } from "react-router";
 import RelatedProducts from "../components/RelatedProducts";
+import { toast } from "react-toastify";
 
 const Product = () => {
   // TODO: Implement the Product component here
@@ -90,9 +91,15 @@ const Product = () => {
               ))}
             </div>
           </div>
-          <button onClick={() => addToCart(productData._id , size)} className="px-8 py-3 border bg-black text-white active:bg-gray-800 rounded transition-all ease-in-out">
-            ADD TO CART
-          </button>
+          <button
+  onClick={() => {
+    addToCart(productData._id, size);
+    toast.success('Added to cart!');
+  }}
+  className="px-8 py-3 border bg-black text-white active:bg-gray-800 rounded transition-all ease-in-out"
+>
+  ADD TO CART
+</button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm mt-5 text-gray-500 flex flex-col gap-1">
             <p>- 100% Original Product.</p>
@@ -102,40 +109,11 @@ const Product = () => {
         </div>
       </div>
 
-      {/* Product Description and Review section */}
-      <div className="mt-20 ">
-        <div className="flex cursor-pointer">
-          <b className="border px-5 py-3 text-sm">Product Description</b>
-          <p className="border px-5 py-3 text-sm">Reviews(122)</p>
-        </div>
-        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500 rounded">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore iure
-            necessitatibus aliquid id expedita et voluptates. Inventore ipsum
-            debitis rerum vero itaque ullam temporibus quod voluptate commodi,
-            culpa, eaque ducimus.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis nam
-            repellat consequuntur ut illum cupiditate asperiores, expedita
-            repudiandae minima ipsa, et, error atque? Nesciunt porro quod
-            inventore. Assumenda, consequatur ea? Quibusdam non porro, explicabo
-            officia inventore totam sapiente eveniet saepe nisi, aliquid qui,
-            eius impedit repellat aspernatur dolorum quam tempora tempore
-            veritatis reiciendis exercitationem fugiat quos? Repellendus neque
-            nisi voluptatibus? Molestias harum sapiente sit, iusto quas neque
-            blanditiis, in sunt explicabo aspernatur officia sed voluptates
-            totam nobis. Aliquid voluptatibus assumenda commodi reiciendis
-            laudantium ducimus vero optio, asperiores accusantium delectus
-            reprehenderit.
-          </p>
-        </div>
-      </div>
-
       {/* Related Products */}
       <RelatedProducts
         category={productData.category}
         subCategory={productData.subCategory}
+        currentProductId={productId}
       />
 
   

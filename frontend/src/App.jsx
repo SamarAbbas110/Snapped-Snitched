@@ -15,7 +15,7 @@ import SearchBar from "./components/SearchBar";
 import { ToastContainer, toast } from "react-toastify";
 import Verify from "./pages/verify";
 function App() {
-  return (
+  return ( 
     <>
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <ToastContainer />
@@ -24,7 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/terms-conditions" element={<Terms_Condition />}></Route>
+          {/* <Route path="/terms-conditions" element={<Terms_Condition />}></Route> */}
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
@@ -33,7 +33,6 @@ function App() {
           <Route path="/place-order" element={<PlaceOrder />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/verify" element={<Verify />} />
-          
         </Routes>
         <Footer />
       </div>

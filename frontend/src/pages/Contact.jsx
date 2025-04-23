@@ -2,6 +2,7 @@ import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/frontend_assets/assets";
 import Newsletter from "../components/Newsletter";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   return (
@@ -19,10 +20,11 @@ const Contact = () => {
           <p className="poppins-bold text-xl text-gray-600 ">Our Store</p>
           <p className="text-gray-500">
             {" "}
-            54709 Willms Station <br /> Suite 350, Washington, USA
+            Plot no 69 Room no 1 gate no 7 NCC Malad(West) Mumbai -95
           </p>
           <p className="text-gray-500">
-            Tel: (415) 555-0132 <br /> Email: care@snappendandstiched.com
+            Tel: +91 8108138743
+            <br /> Email: sa707510@gmail.com
           </p>
           <p className="text-gray-500 text-xl poppins-bold">
             Careers at Snapped and Stitched
@@ -30,7 +32,12 @@ const Contact = () => {
           <p className="text-gray-500">
             Learn more about our teams and job openings.
           </p>
-          <button className="border px-6 py-3 hover:bg-black hover:text-white transition-all ease-in-out">Explore Jobs</button>
+          <button
+            onClick={() => toast.error("Will be available soon")}
+            className="border px-6 py-3 hover:bg-black hover:text-white transition-all ease-in-out"
+          >
+            Explore Jobs
+          </button>
         </div>
       </div>
       <Newsletter />
