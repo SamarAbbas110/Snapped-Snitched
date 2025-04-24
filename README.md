@@ -9,30 +9,94 @@ React.js
 
 Tailwind CSS
 
-React Toastify
+React Toaster
 
-React Router
+Features
 
-Backend:
+1. Navigation
 
-Node.js
+A responsive navigation bar with links to Home, Collections, About, Contact Us.
 
-Express.js
+Search button and login section with profile, orders, logout options.
 
-MongoDB with Mongoose
+Cart icon to view selected items.
 
-Cloudinary (Image storage)
+2. UI Components
 
-Stripe & Razorpay (Payment Gateway)
+Navbar: Includes Home, Collections, About, Contact Us.
 
-Multer (Image Upload)
+SlideBar: For smooth navigation for Mobile View.
 
-JWT (Authentication)
+Hero Page: Stylish introduction with Poppins custom font.
 
-Dev Tools:
+Footer: Includes links to return policy, exchange policy, and customer support.
 
-Thunder Client (API Testing)
+Subscribe Input: Allows users to subscribe to newsletters.
 
-Nodemon
+3. Product Management
 
-Dotenv
+Collections Component:
+
+Filter and sort options (Relevance, Low to High, High to Low).
+
+Dynamic product listing and search functionality.
+
+Search bar visible only on the Collections page.
+
+Product Page:
+
+Displays product details (name, price, image, ID).
+
+Features like sizes, add-to-cart button, and related products.
+
+Real-time product count updates in the cart.
+
+4. Cart Management
+
+Display cart items including product name, size, price, quantity, and delete option.
+
+Calculate the total amount dynamically.
+
+Navigate between product and cart pages using useNavigate() hook.
+
+5. Order Placement
+
+Checkout Page:
+
+User form for order details.
+
+Payment options with a submit button.
+
+Order Page:
+
+Displays purchased products with details (image, price, quantity, size).
+
+Status message and track order button.
+
+Login and Signup Page
+
+BACKEND PART
+
+Dependencies : cors dotenv express jsonwebtoken mongoose multer nodemon razorpay stripe validator cloudinary bcrypt
+Thunder Client for Checking API'S in VS code
+
+Implemented Cloudinary , Connected MongoDB
+Created UserSchema and Product Schema
+
+Routes 
+    - Product Routes eg - Addproducts , Removeproducts , lisitngProducts , singleProduct
+    - User Routes - eg - login , register , admin
+
+Middlewares 
+    - Created 2 Middlewares
+    1 - Multer middleware for Addproduct Route allow to upload Images 
+    2 - adminAuth Middleware , this middle is basically used for add and remove product with the admin credentials only
+
+Controllers 
+    - Creatd ProductControllers written the function logic for all 4 routs in Product Route
+    - Added RegisterUser , loginUser , Admin logic to handle to Authentication Operations
+
+Admin 
+Depencies - axios , react toastify , react-router , 
+Tailwind css , autoprefixer
+
