@@ -3,76 +3,50 @@
 A dynamic, full-stack E-Commerce Web Application built with React.js and Node.js, offering a seamless shopping experience with modern UI/UX design. This application supports user authentication, product management, cart and order functionality, and multiple payment gateways including Stripe, Razorpay, and Cash on Delivery (COD).
 
 🔧 Tech Stack
+
 Frontend:
-
 React.js
-
 Tailwind CSS
-
 React Toaster
 
 Features
 
 1. Navigation
-
 A responsive navigation bar with links to Home, Collections, About, Contact Us.
-
 Search button and login section with profile, orders, logout options.
-
 Cart icon to view selected items.
 
 2. UI Components
-
 Navbar: Includes Home, Collections, About, Contact Us.
-
 SlideBar: For smooth navigation for Mobile View.
-
 Hero Page: Stylish introduction with Poppins custom font.
-
-Footer: Includes links to return policy, exchange policy, and customer support.
-
-Subscribe Input: Allows users to subscribe to newsletters.
 
 3. Product Management
 
 Collections Component:
-
 Filter and sort options (Relevance, Low to High, High to Low).
-
 Dynamic product listing and search functionality.
-
 Search bar visible only on the Collections page.
 
 Product Page:
-
 Displays product details (name, price, image, ID).
-
 Features like sizes, add-to-cart button, and related products.
-
 Real-time product count updates in the cart.
 
 4. Cart Management
-
 Display cart items including product name, size, price, quantity, and delete option.
-
 Calculate the total amount dynamically.
-
 Navigate between product and cart pages using useNavigate() hook.
 
 5. Order Placement
 
 Checkout Page:
-
 User form for order details.
-
 Payment options with a submit button.
 
 Order Page:
-
 Displays purchased products with details (image, price, quantity, size).
-
 Status message and track order button.
-
 Login and Signup Page
 
 BACKEND PART
@@ -97,8 +71,7 @@ Controllers
     - Added RegisterUser , loginUser , Admin logic to handle to Authentication Operations
 
 Admin 
-Depencies - axios , react toastify , react-router , 
-Tailwind css , autoprefixer
+Depencies - axios , react toastify , react-router , Tailwind css , autoprefixer
 
 🧩 Middleware
 Multer Middleware – Handles image upload via form data
@@ -111,34 +84,25 @@ Product Controller: CRUD operations for products
 User Controller: Register, Login, Admin logic
 
 🧑‍💻 Admin Panel
+
 Dependencies:
-
 React Toastify
-
 Axios
-
 Tailwind CSS
 
 Admin Features:
 Admin Login with protected access
-
 Add Product: Upload image, enter name, description, categories, price, size, and bestseller status
-
 List Products: View all added products with options to edit/delete
 
 Order Management:
-
 View customer name, address, product list, order status, payment method (Stripe, Razorpay, COD)
-
 Track and update delivery status (e.g., Order Placed → Packed → Shipped → Delivered)
 
 🧪 Testing
 All APIs tested using Thunder Client inside VS Code
 
 🗃️ Folder Structure
-bash
-Copy
-Edit
 ├── client/            # Frontend - React App
 ├── server/            # Backend - Node/Express App
 │   ├── models/        # Mongoose Schemas
@@ -152,45 +116,31 @@ Edit
 🚀 Getting Started
 
 1. Clone the Repository
-   
 git clone https://github.com/yourusername/ecommerce-app.git
 cd Ecommerce
 
 3. Install Dependencies
-   
 frontend:
 cd frontend
 npm run dev
 
-Server:
-
+Backend:
 cd backend
 npm run server
 
-admin:
-
+Admin:
 cd admin
 npm run dev
 
-
-
 3. Setup .env File
-   
 PORT=5000
 MONGO_URI=your_mongo_uri
-
 JWT_SECRET=your_jwt_secret
-
 CLOUDINARY_NAME=your_cloudinary_name
-
 CLOUDINARY_API_KEY=your_cloudinary_key
-
 CLOUDINARY_API_SECRET=your_cloudinary_secret
-
 STRIPE_SECRET_KEY=your_stripe_key
-
 RAZORPAY_KEY_ID=your_razorpay_key
-
 RAZORPAY_SECRET=your_razorpay_secret
 
 📸 Frontend
