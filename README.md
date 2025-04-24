@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/a8a8b912-1bbe-4f39-9d12-5e4ec9cc3be7)🛍️ E-Commerce Web Application
+🛍️ E-Commerce Web Application
 
 A dynamic, full-stack E-Commerce Web Application built with React.js and Node.js, offering a seamless shopping experience with modern UI/UX design. This application supports user authentication, product management, cart and order functionality, and multiple payment gateways including Stripe, Razorpay, and Cash on Delivery (COD).
 
