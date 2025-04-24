@@ -1,103 +1,110 @@
-E-Commerce Web Application
+🛍️ E-Commerce Web Application
+A dynamic, full-stack E-Commerce Web Application built with React.js and Node.js, offering a seamless shopping experience with modern UI/UX design. This application supports user authentication, product management, cart and order functionality, and multiple payment gateways including Stripe, Razorpay, and Cash on Delivery (COD).
 
-Overview
-
-This e-commerce web application is a dynamic and interactive platform that allows users to browse products, add items to the cart, and place orders efficiently. It provides a seamless shopping experience with modern design and smooth navigation.
-
-Tech Stack
+🔧 Tech Stack
+Frontend:
 
 React.js
-
 Tailwind CSS
+React Toastify
+React Router
 
-React Toaster
+Backend:
 
-Features
+Node.js
+Express.js
+MongoDB with Mongoose
+Cloudinary (Image storage)
+Stripe & Razorpay (Payment Gateway)
+Multer (Image Upload)
+JWT (Authentication)
 
-1. Navigation
+Dev Tools:
+Thunder Client (API Testing) and Postman
+Nodemon
+Dotenv
 
-A responsive navigation bar with links to Home, Collections, About, Contact Us.
+✨ Features
+🌐 Navigation
+Responsive navigation bar with links: Home, Collections, About, Contact Us
+Search bar (visible on Collections page only)
+Login/Profile menu (View orders, Logout)
+Cart icon for quick cart access
 
-Search button and login section with profile, orders, logout options.
+💎 UI Components
+Navbar: Accessible site-wide navigation
+Sidebar: Optimized for mobile view
+Hero Page: Stylish landing section with Poppins font
+Footer: Simplified and clean
 
-Cart icon to view selected items.
+🛒 Product Management
 
-2. UI Components
-
-Navbar: Includes Home, Collections, About, Contact Us.
-
-SlideBar: For smooth navigation for Mobile View.
-
-Hero Page: Stylish introduction with Poppins custom font.
-
-Footer: Includes links to return policy, exchange policy, and customer support.
-
-Subscribe Input: Allows users to subscribe to newsletters.
-
-3. Product Management
-
-Collections Component:
-
-Filter and sort options (Relevance, Low to High, High to Low).
-
-Dynamic product listing and search functionality.
-
-Search bar visible only on the Collections page.
+Collections Page:
+Dynamic product listing
+Filter & sort (Relevance, Price: Low to High/High to Low)
+Search functionality
 
 Product Page:
+Product details (name, price, image, ID)
+Sizes, add-to-cart functionality
+Related products section
 
-Displays product details (name, price, image, ID).
+Cart Management:
+Item list (name, size, quantity, price)
+Quantity update and delete item
+Real-time cart total calculation
 
-Features like sizes, add-to-cart button, and related products.
-
-Real-time product count updates in the cart.
-
-4. Cart Management
-
-Display cart items including product name, size, price, quantity, and delete option.
-
-Calculate the total amount dynamically.
-
-Navigate between product and cart pages using useNavigate() hook.
-
-5. Order Placement
-
+✅ Order Placement
 Checkout Page:
+User details form
+Payment options (Stripe, Razorpay, COD)
 
-User form for order details.
+Order Summary:
+Purchased items, price, size, status
+Track order functionality
+Dynamic order status updates
 
-Payment options with a submit button.
+🔐 Authentication
+User Login and Signup pages
+JWT-based authentication
+Admin-protected routes and actions
 
-Order Page:
+🛠️ Backend Functionality
+📦 Dependencies:
+bash
+Copy
+Edit
+cors dotenv express jsonwebtoken mongoose multer nodemon razorpay stripe validator cloudinary bcrypt
 
-Displays purchased products with details (image, price, quantity, size).
+🗂️ Schemas
+User Schema: Authentication & roles
+Product Schema: Includes name, description, price, category, sizes, images
 
-Status message and track order button.
+🛣️ Routes
+Product Routes: addProduct, removeProduct, listProducts, getProduct
+User Routes: login, register, admin login
 
-Login and Signup Page
+🧩 Middleware
+Multer Middleware – Handles image upload via form data
+adminAuth Middleware – Protects admin actions like adding/removing products
 
-BACKEND PART
+🧠 Controllers
+Product Controller: CRUD operations for products
+User Controller: Register, Login, Admin logic
 
-Dependencies : cors dotenv express jsonwebtoken mongoose multer nodemon razorpay stripe validator cloudinary bcrypt
-Thunder Client for Checking API'S in VS code
+🧑‍💻 Admin Panel
+Dependencies:
+React Toastify
+Axios
+Tailwind CSS
+Admin Features:
+Admin Login with protected access
+Add Product: Upload image, enter name, description, categories, price, size, and bestseller status
+List Products: View all added products with options to edit/delete
 
-Implemented Cloudinary , Connected MongoDB
-Created UserSchema and Product Schema
+Order Management:
+View customer name, address, product list, order status, payment method (Stripe, Razorpay, COD)
+Track and update delivery status (e.g., Order Placed → Packed → Shipped → Delivered)
 
-Routes 
-    - Product Routes eg - Addproducts , Removeproducts , lisitngProducts , singleProduct
-    - User Routes - eg - login , register , admin
-
-Middlewares 
-    - Created 2 Middlewares
-    1 - Multer middleware for Addproduct Route allow to upload Images 
-    2 - adminAuth Middleware , this middle is basically used for add and remove product with the admin credentials only
-
-Controllers 
-    - Creatd ProductControllers written the function logic for all 4 routs in Product Route
-    - Added RegisterUser , loginUser , Admin logic to handle to Authentication Operations
-
-Admin 
-Depencies - axios , react toastify , react-router , 
-Tailwind css , autoprefixer
-
+🧪 Testing
+All APIs tested using postman Thunder Client inside VS Code.
