@@ -2,14 +2,16 @@
   import { shopContext } from "../context/ShopContext";
   import axios from "axios";
   import { toast } from "react-toastify";
+  import { useNavigate } from "react-router-dom";
 
   const Login = () => {
     const [currentState, setCurrentState] = useState("Login");
-    const { token, setToken, navigate, backendURL } = useContext(shopContext);
+    const { token, setToken, backendURL } = useContext(shopContext);
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const submitHandler = async (e) => {
       e.preventDefault();
@@ -46,10 +48,11 @@
     };
 
     useEffect(() => {
-      if(token){ //if we are logged in we are not able to to log again
-        navigate("/" )
+      if (token) {
+        navigate("/");
       }
-    }, [token])
+    }, [token, navigate]);
+    
 
     return (
       <form
