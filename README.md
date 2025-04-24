@@ -178,12 +178,19 @@ npm run dev
    
 PORT=5000
 MONGO_URI=your_mongo_uri
+
 JWT_SECRET=your_jwt_secret
+
 CLOUDINARY_NAME=your_cloudinary_name
+
 CLOUDINARY_API_KEY=your_cloudinary_key
+
 CLOUDINARY_API_SECRET=your_cloudinary_secret
+
 STRIPE_SECRET_KEY=your_stripe_key
+
 RAZORPAY_KEY_ID=your_razorpay_key
+
 RAZORPAY_SECRET=your_razorpay_secret
 
 📸 Frontend
