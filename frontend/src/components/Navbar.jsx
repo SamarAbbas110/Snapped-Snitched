@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { assets } from "../assets/frontend_assets/assets";
 import { shopContext } from "../context/ShopContext";
-import { useNavigate } from "react-router-dom"; // ✅ correct way to use navigate
 
 const Navbar = () => {
-  const navigate = useNavigate(); // ✅ useNavigate instead of passing from context
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate(); // <-- use navigate hook from react-router-dom
 
   const {
     setShowSearch,
@@ -23,6 +22,12 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  const handleProfileClick = () => {
+    if (!token) {
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="flex items-center justify-between py-5 font-semibold">
       <Link to="/">
@@ -32,19 +37,15 @@ const Navbar = () => {
       <ul className="hidden sm:flex gap-5 text-base text-gray-700 poppins-regular">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>Home</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/collections" className="flex flex-col items-center gap-1">
           <p>Collections</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/about" className="flex flex-col items-center gap-1">
           <p>About</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
         <NavLink to="/contact" className="flex flex-col items-center gap-1">
           <p>Contact US</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden " />
         </NavLink>
       </ul>
 
@@ -58,9 +59,7 @@ const Navbar = () => {
 
         <div className="group relative">
           <img
-            onClick={() => {
-              if (!token) navigate("/login");
-            }}
+            onClick={handleProfileClick}
             src={assets.profile_icon}
             className="w-5 min-w-5 cursor-pointer"
             alt="profile"
@@ -68,16 +67,10 @@ const Navbar = () => {
           {token && (
             <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
               <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
-                <p
-                  onClick={() => navigate("/orders")}
-                  className="cursor-pointer hover:text-black"
-                >
+                <p onClick={() => navigate("/orders")} className="cursor-pointer hover:text-black">
                   Orders
                 </p>
-                <p
-                  onClick={logout}
-                  className="cursor-pointer hover:text-black"
-                >
+                <p onClick={logout} className="cursor-pointer hover:text-black">
                   Logout
                 </p>
               </div>
@@ -112,12 +105,12 @@ const Navbar = () => {
         <div className="flex flex-col text-gray-600">
           <div
             onClick={() => setVisible(false)}
-            className="flex items-center gap-3 p-3 "
+            className="flex items-center gap-3 p-3"
           >
             <img
               className="h-4 rotate-180 cursor-pointer"
               src={assets.dropdown_icon}
-              alt="close"
+              alt="back"
             />
             <p>Back</p>
           </div>
