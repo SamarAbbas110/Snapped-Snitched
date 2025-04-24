@@ -10,7 +10,7 @@ const Product = () => {
   // TODO: Implement the Product component here
 
   const { productId } = useParams(); // Getting the ProductId from Routes
-  const { products, currency , addToCart} = useContext(shopContext);
+  const { products, currency, addToCart } = useContext(shopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -22,7 +22,7 @@ const Product = () => {
         if (item._id === productId) {
           setProductData(item); // show me the product when its matches the productId
           setImage(item.image[0]); // First Image in Main Image
-          console.log(item);
+      
           return null;
         }
       });
@@ -60,15 +60,7 @@ const Product = () => {
         </div>
         <div className="flex-1">
           <h1 className="text-2xl mt-2 poppins-bold">{productData.name}</h1>
-          <div className="flex items-center gap-1 mt-2">
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_icon} alt="" className="w-3 5" />
-            <img src={assets.star_dull_icon} alt="" className="w-3 5" />
-            <p className="pl-2">(122)</p>
-          </div>
-          <p className="mt-3 text-2xl">
+          <p className="mt-3 text-2xl text-red-500 poppins-bold">
             {currency}
             {productData.price}
           </p>
@@ -92,14 +84,14 @@ const Product = () => {
             </div>
           </div>
           <button
-  onClick={() => {
-    addToCart(productData._id, size);
-    toast.success('Added to cart!');
-  }}
-  className="px-8 py-3 border bg-black text-white active:bg-gray-800 rounded transition-all ease-in-out"
->
-  ADD TO CART
-</button>
+            onClick={() => {
+              addToCart(productData._id, size);
+              toast.success("Added to cart!");
+            }}
+            className="px-8 py-3 border bg-black text-white active:bg-gray-800 rounded transition-all ease-in-out"
+          >
+            ADD TO CART
+          </button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm mt-5 text-gray-500 flex flex-col gap-1">
             <p>- 100% Original Product.</p>
@@ -116,16 +108,14 @@ const Product = () => {
         currentProductId={productId}
       />
 
-  
-        <div className="text-center">
-          <Link to={"/collections"}>
-            {" "}
-            <button className=" px-5 py-4  rounded bg-slate-900 text-white">
-              Explore more Products...
-            </button>
-          </Link>
-        </div>
-      
+      <div className="text-center">
+        <Link to={"/collections"}>
+          {" "}
+          <button className=" px-5 py-4  rounded bg-slate-900 text-white">
+            Explore more Products...
+          </button>
+        </Link>
+      </div>
     </div>
   ) : (
     <div className="opacity:0"></div>

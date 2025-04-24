@@ -45,14 +45,12 @@ const ShopContextProvider = (props) => {
           { headers: { token } }
         );
       } catch (error) {
-        console.log(error);
         toast.error(error.message);
       }
     }
   };
 
   useEffect(() => {
-    // console.log(cartItem);
   }, [cartItem]);
 
   // Add the product count in Count Bag
@@ -104,7 +102,6 @@ const ShopContextProvider = (props) => {
           { headers: { token } }
         ); //updating the cart
       } catch (error) {
-        console.log(error);
         toast.error(error.message);
       }
     }
@@ -122,7 +119,6 @@ const ShopContextProvider = (props) => {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   };
@@ -135,7 +131,6 @@ const ShopContextProvider = (props) => {
         setCartItem(response.data.cartData)
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.message)
     }
   }

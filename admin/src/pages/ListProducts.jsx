@@ -10,9 +10,7 @@ const ListProducts = ({token}) => {
     try {
       const fetchprods = await axios.get(
         backendURL + "/api/product/listproducts"
-      );
-      console.log("API response:", fetchprods.data); // Check full structure here
-
+      )
       const products = fetchprods?.data?.message;
       if (Array.isArray(products)) {
         setList(products);
@@ -39,7 +37,6 @@ const ListProducts = ({token}) => {
         toast.error(response.data.message)
       }
     } catch (error) {
-      console.log(error);
       toast.error(error.message)
 
     }

@@ -18,7 +18,7 @@ const Orders = () => {
         {},
         { headers: { token } }
       );
-      console.log(response.data); //receiving the order Details
+
       if (response.data.success) {
         let allOrderItems = [];
         response.data.orders.map((order) => {

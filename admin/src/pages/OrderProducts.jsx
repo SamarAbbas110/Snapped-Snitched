@@ -18,7 +18,7 @@ const OrderProducts = ({ token }) => {
         {},
         { headers: { token } }
       );
-      console.log(response.data);
+
       if (response.data.success) {
         setOrders(response.data.orders.reverse());
       } else {
@@ -41,12 +41,11 @@ const OrderProducts = ({ token }) => {
         },
         { headers: { token } }
       );
-      console.log("response", response);
+
       if (response.data.success) {
         await fetchAllOrders(); // Re-fetch all orders to reflect the updated status immediately in the UI
       }
     } catch (error) {
-      console.log(error);
       toast.error(response.data.message);
     }
   };

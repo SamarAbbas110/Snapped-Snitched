@@ -1,7 +1,7 @@
 import React, { useContext , useEffect , useState } from "react";
 import { shopContext } from "../context/ShopContext";
 import { assets } from "../assets/frontend_assets/assets";
-import { useLocation } from "react-router";
+import { useLocation} from "react-router";
 
 const SearchBar = () => {
     const [visible, setvisible] = useState(false)
@@ -12,13 +12,9 @@ const SearchBar = () => {
 const location = useLocation();
 
 useEffect(() => {
-  if(location.pathname.includes("collections")){ //it checks if 'localhost:5173/collections is there then show searchBar
-    setvisible(true)
-  }
-  else{
-    setvisible(false)
-  }
-}, [location])
+  setvisible(location.pathname.includes("collections"));
+}, [location.pathname]);
+
 
 
   return showSearch && visible  ? (

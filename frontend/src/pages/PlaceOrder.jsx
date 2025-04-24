@@ -46,7 +46,7 @@ const PlaceOrder = () => {
       order_id: order.id,
       receipt: order.receipt,
       handler: async (response) => {
-        console.log("response" , response);
+
         try {
           const { data } = await axios.post(
             backendURL + "/api/order/verify-razorpay",
@@ -86,7 +86,7 @@ const PlaceOrder = () => {
           }
         }
       }
-      console.log(orderItem);
+
 
       //getting the Order Data from OrdersModel
       let orderData = {
@@ -141,7 +141,6 @@ const PlaceOrder = () => {
           break;
       }
     } catch (e) {
-      console.log(e);
     }
   };
 

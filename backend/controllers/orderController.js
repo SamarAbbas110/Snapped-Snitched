@@ -40,7 +40,6 @@ const placeOrder = async (req, res) => {
       message: "Order Placed",
     });
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,
@@ -103,7 +102,6 @@ const placeOrderStripe = async (req, res) => {
       session_url: session.url,
     });
   } catch (e) {
-    console.log(e);
     res.json({
       success: false,
       message: e.message,
@@ -129,7 +127,6 @@ const verifyStripe = async () => {
       });
     }
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,
@@ -164,7 +161,6 @@ const placeOrderRazorpay = async (req, res) => {
     await razorpayInstance.orders.create(options, (error, order) => {
       //it creates the options for payment , if the payment failed we get errors
       if (error) {
-        console.log(error);
         return res.json({
           success: false,
           message: error,
@@ -176,7 +172,6 @@ const placeOrderRazorpay = async (req, res) => {
       });
     });
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,
@@ -206,7 +201,6 @@ const verifyRazorpay = async (req, res) => {
       })
     }
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,
@@ -222,7 +216,6 @@ const adminhandlingOrders = async (req, res) => {
       orders,
     });
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,
@@ -241,7 +234,6 @@ const userHandlingOrders = async (req, res) => {
       orders,
     });
   } catch (error) {
-    console.log(error);
     res.json({
       success: false,
       message: error.message,

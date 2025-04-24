@@ -54,7 +54,7 @@ const Cart = () => {
                 />
                 <div className="">
                   <p className="text-xs sm:text-lg poppins-bold">
-                  {/* Append the selected product size (e.g., S, M, L) next to the product name in the cart */}
+                    {/* Append the selected product size (e.g., S, M, L) next to the product name in the cart */}
                     {cartProducts.name} - {item.size}
                   </p>
                   <div className="flex items-center gap-5 mt-2">
@@ -83,10 +83,10 @@ const Cart = () => {
               />
               {/* (item._id , item.size , 0) - Means if the Quantity is 0 it will remove from the Cart */}
               <img
-              onClick={() => {
-                updateQuantity(item._id, item.size, 0);
-                toast.success("Product has been deleted successfully");
-              }}
+                onClick={() => {
+                  updateQuantity(item._id, item.size, 0);
+                  toast.success("Product has been deleted successfully");
+                }}
                 className="w-4 mr-4 sm:w-5 cursor-pointer"
                 src={assets.bin_icon}
                 alt=""
@@ -101,7 +101,12 @@ const Cart = () => {
           <div className="w-full text-end">
             <button
               onClick={() => navigate("/place-order")}
-              className="bg-black text-white text-sm my-8 px-8 py-3"
+              className={`text-sm my-8 px-8 py-3 ${
+                cartData.length > 0
+                  ? "bg-black text-white cursor-pointer"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
+              disabled={cartData.length === 0}
             >
               Proceed to Checkout
             </button>

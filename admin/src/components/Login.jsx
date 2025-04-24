@@ -16,13 +16,11 @@ const Login = ({ setToken }) => {
       }); // Fetching the Backend Admin email & Password
       if (response.data.success) {
         setToken(response.data.token); //If My admin & password Token matches in Login then allow me to enter into the webpage
-      }
-      else{
-        toast.error(response.data.error)
+      } else {
+        toast.error(response.data.error);
       }
     } catch (error) {
-      console.log(error);
-      toast.error(error.message)
+      toast.error(error.message);
     }
   };
 
