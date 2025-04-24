@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/frontend_assets/assets";
-import Newsletter from "../components/Newsletter";
 import { toast } from "react-toastify";
 
 const Contact = () => {
@@ -40,7 +39,6 @@ const Contact = () => {
           </button>
         </div>
       </div>
-      <Newsletter />
     </div>
   );
 };

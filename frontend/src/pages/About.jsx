@@ -1,7 +1,6 @@
 import React from "react";
 import Title from "../components/Title";
 import { assets } from "../assets/frontend_assets/assets";
-import Newsletter from "../components/Newsletter";
 
 const About = () => {
   return (
@@ -17,30 +16,26 @@ const About = () => {
         />
         <div className="flex flex-col text-sm justify-center gap-6 md:w-2/4 text-gray-600">
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse porro
-            eius reiciendis qui quasi architecto maxime recusandae, harum in
-            laborum, alias laboriosam doloribus nemo. Voluptas aut vel commodi
-            quae nobis ipsam repellat rerum reiciendis quisquam! Reprehenderit,
-            nemo cupiditate! Ex, amet ipsa ipsam nemo animi aperiam dolores
-            quibusdam consequuntur nihil quis?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi maxime
-            amet, ut consectetur dignissimos ex similique nemo alias! Dolorum
-            dolores voluptate aut corrupti minima? Doloremque deleniti facilis
-            aliquam dignissimos sapiente, voluptatum nam, quae voluptates culpa
-            ex officiis animi consequatur ipsum corrupti necessitatibus
-            reprehenderit eum adipisci est quod? Corrupti, porro repellendus?
+            At <span className="poppins-bold">Snapped & Stitched</span>, fashion
+            meets craftsmanship. We’re not just another clothing brand — we’re a
+            movement built on stories woven into every stitch. Born from a
+            passion for minimalist elegance and everyday comfort, our pieces are
+            designed to be timeless yet tailored to modern lifestyles. Each
+            garment tells a story — of thoughtful design, sustainable choices,
+            and the people behind every seam. We believe clothing should do more
+            than just look good; it should feel good, do good, and last long.
+            Whether it's a cozy knit or a structured essential, we bring
+            together quality fabrics, ethical production, and style that speaks
+            for itself.
           </p>
           <b className="text-gray-800">Our Mission</b>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae
-            veritatis molestiae quibusdam tempora porro pariatur nisi corporis
-            nobis ullam quisquam aperiam, facere, fugiat voluptas ex, ipsum rem!
-            Laborum animi repellat nulla odit assumenda, voluptas voluptatem
-            doloribus ullam inventore molestias deserunt facilis necessitatibus
-            accusantium, numquam libero eos voluptatum. Magnam, cumque
-            veritatis.
+            Our mission is simple: to stitch together style and sustainability.
+            We’re committed to creating apparel that empowers — from the makers
+            who craft it to the wearers who rock it. Through responsible
+            sourcing, fair labor practices, and slow fashion values, we aim to
+            redefine what it means to look good while doing good. Welcome to the
+            future of fashion — one snap and stitch at a time.
           </p>
         </div>
       </div>
@@ -70,9 +65,7 @@ const About = () => {
             ensuring your satisfaction is our top priority.
           </p>
         </div>
-       
       </div>
-      <Newsletter />
     </div>
   );
 };
