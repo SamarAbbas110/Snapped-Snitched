@@ -1,14 +1,15 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { assets } from "../assets/frontend_assets/assets";
 import { shopContext } from "../context/ShopContext";
+
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-
+  const navigate = useNavigate();
+  
   const {
     setShowSearch,
     getCartCount,
-    navigate,
     token,
     setToken,
     setCartItem,

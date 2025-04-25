@@ -1,18 +1,16 @@
-// src/components/ProtectedRoute.jsx
-import { useContext } from 'react';
-import { Navigate, Outlet } from 'react-router';
-import { shopContext } from '../context/ShopContext';
+// components/ProtectedRoute.jsx (or inside App.js)
+import { useContext } from "react";
+import { Navigate } from "react-router-dom";
+import { shopContext } from "../context/ShopContext";
 
-const ProtectedRoute = () => {
+const ProtectedRoute = ({ children }) => {
   const { token } = useContext(shopContext);
-  
+
   if (!token) {
-    // Redirect to login if not authenticated
     return <Navigate to="/login" replace />;
   }
 
-  // Render child routes if authenticated
-  return <Outlet />;
+  return children;
 };
 
 export default ProtectedRoute;
