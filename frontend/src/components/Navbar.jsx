@@ -1,15 +1,14 @@
 import React, { useContext, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router";
+import { Link, NavLink } from "react-router";
 import { assets } from "../assets/frontend_assets/assets";
 import { shopContext } from "../context/ShopContext";
-
 const Navbar = () => {
   const [visible, setVisible] = useState(false);
-  const navigate = useNavigate();
-  
+
   const {
     setShowSearch,
     getCartCount,
+    navigate,
     token,
     setToken,
     setCartItem,
@@ -19,7 +18,7 @@ const Navbar = () => {
     navigate("/login");
     localStorage.removeItem("token");
     setToken("");
-    setCartItem({});  
+    setCartItem({});
   };
   return (
     <div className="flex items-center justify-between py-5 font-semibold">
@@ -57,7 +56,7 @@ const Navbar = () => {
 
         <div className="group relative">
           <img
-            onClick={token ? null : navigate("/login")}
+            onClick={() => token ? null : navigate("/login")}
             src={assets.profile_icon}
             className="w-5 min-w-5 cursor-pointer"
             alt=""
